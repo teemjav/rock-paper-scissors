@@ -1,75 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script>
-        /*Score tracking*/
-        humanScore = 0
-        computerScore = 0
-    
-        /*Introduction*/
-        console.log("You will be playing 5 games of Rock, Paper, Scissors!")
-    
-        for (let i=0; i<5; i++) {
-            getComputerChoice=Math.random()
-    
-            /*Getting the Computer Choice*/
-            ComputerChoice = ""
-            if (0<=getComputerChoice<0.33) {
-                ComputerChoice = "rock"
-            } else if (0.33<=getComputerChoice<0.66) {
-                ComputerChoice = "paper"
-            } else {
-                ComputerChoice = "scissors"
-            }
-    
-            /*Getting the User Choice*/
-            let HumanChoice = prompt("Rock, Paper or Scissors?").toLowerCase();
-    
-            /*Logic*/
-            if (ComputerChoice == "rock" && HumanChoice == "rock") {
-                console.log("Computer chose rock, it's a draw!")
-            } else if (ComputerChoice == "rock" && HumanChoice == "paper") {
-                console.log("Computer chose rock, you win!")
-                humanScore++;
-            } else if (ComputerChoice == "rock" && HumanChoice == "scissors") {
-                console.log("Computer chose rock, you lose!")
-                computerScore++;
-            } else if (ComputerChoice == "paper" && HumanChoice == "rock") {
-                console.log("Computer chose paper, you lose!")
-                computerScore++;
-            } else if (ComputerChoice == "paper" && HumanChoice == "paper") {
-                console.log("Computer chose paper, it's a draw!")
-            } else if (ComputerChoice == "paper" && HumanChoice == "scissors") {
-                console.log("Computer chose paper, you win!")
-                humanScore++;
-            } else if (ComputerChoice == "scissors" && HumanChoice == "rock") {
-                console.log("Computer chose scissors, you win!")
-                humanScore++;
-            } else if (ComputerChoice == "scissors" && HumanChoice == "paper") {
-                console.log("Computer chose scissors, you lose!")
-                computerScore++;
-            } else if (ComputerChoice == "scissors" && HumanChoice == "scissors") {
-                console.log("Computer chose scissors, it's a draw!")
-            }
-            
-            /*Printing cumulative score*/
-            console.log(`Your score is now ${humanScore}`)
-            console.log(`Your score is now ${computerScore}`)
-        }   
-    
-        /*Overall score*/
-        if (humanScore>computerScore) {
-            console.log("You beat the computer! GG!")
-        } else {
-            console.log("You lost to the computer, better luck next time!")
-        }
-    
-    </script>
+    <script src="script.js" defer></script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="header">Rock, Paper, Scissors</div>
+    <div class="computer"><strong>Click below to play!</strong>&nbsp;&nbsp;Good luck!</div>
+    <div class="results">Human Score: 0 &nbsp;&nbsp;|&nbsp;&nbsp;Computer Score: 0 </div>
+    <div class="options">
+        <div class = "rock">✊</div>
+        <div class = "paper">✌️</div>
+        <div class = "scissors">✋</div>
+    </div>
 </body>
 </html>
